@@ -15,5 +15,8 @@
     "url": "https://github.com/bvalcas-livecampus/agilite_back/issues"
   },
   "homepage": "https://github.com/bvalcas-livecampus/agilite_back#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
