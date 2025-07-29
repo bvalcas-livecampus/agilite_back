@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 const authRouter = require("./src/router/auth");
 const userRouter = require("./src/router/user");
+const movieRouter = require("./src/router/movie");
 const { PORT } = require("./src/config/config.js");
 const initDb = require("./src/data/db.js").initDb;
 
@@ -25,11 +26,12 @@ app.use(bodyParser.json());
 
 app.use(express.json());
 app.use("/auth", authRouter);
-app.use("/users", userRouter);
 app.use("/movies", movieRouter);
+app.use("/users", userRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+// ======================
+app.listen(PORT, () => {
+    console.log("Backend Film API listening on port " + PORT);
 });
 
 module.exports = app;
