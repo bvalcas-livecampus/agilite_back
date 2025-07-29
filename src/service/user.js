@@ -12,12 +12,15 @@ async function getUserByEmail(email) {
 
 // Create a new user
 async function createUser(userData) {
-    return db('users').insert(userData).returning('*');
+    // SQLite returns an array of inserted row IDs, so fetch the user after insert
+    const [id] = await db('users').insert(userData);
+    return getUserById(id);
 }
 
 // Update user by ID
 async function updateUser(userId, updates) {
-    return db('users').where({ id: userId }).update(updates).returning('*');
+    await db('users').where({ id: userId }).update(updates);
+    return getUserById(userId);
 }
 
 // Delete user by ID
