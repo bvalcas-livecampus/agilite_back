@@ -7,4 +7,4 @@ if (!process.env.JWT_SECRET) {
 }
 
 export const JWT_SECRET = process.env.JWT_SECRET;
-export const PORT = process.env.PORT;
+export const PORT = process.env.PORT || 3000;
