@@ -1,5 +1,10 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-export const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
-export const PORT = process.env.PORT || 4000;
+if (!process.env.JWT_SECRET) {
+    console.error("Missing JWT_SECRET environment variable.");
+    process.exit(1);
+}
+
+export const JWT_SECRET = process.env.JWT_SECRET;
+export const PORT = process.env.PORT;
