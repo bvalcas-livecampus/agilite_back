@@ -75,7 +75,7 @@ node ./src/data/migrate.js
 
 -   id (INTEGER, clé primaire)
 -   email (TEXT, unique)
--   password (TEXT)
+-   password_hash (TEXT)
 -   username (TEXT, optionnel)
 
 ### movies
